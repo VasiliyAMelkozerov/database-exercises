@@ -21,11 +21,12 @@ SHOW CREATE TABLE albums;
 SELECT name FROM albums WHERE artist='pink floyd';
 #4a name of all pink floyd songs
  -- OR artist = 'AC/DC';
--- this line of code gives us specifically pink floyd under t he artist column
+-- this line of code gives us specifically pink floyd under the artist column
 
 SELECT * FROM albums 
 WHERE release_date 
 ORDER BY release_date;
+#3d
 #ASC LIMIT 1; optional code to give us one answer
 #this line of code pulls all of the info from albums and organized it by release date in order of release date
 -- SELECT first_name, last_name
@@ -53,5 +54,6 @@ WHERE sales < 20;
 
 SELECT * 
 FROM albums
-WHERE genre = 'Rock';
+#WHERE genre = 'Rock';
+WHERE genre LIKE '%Rock%';
 #4f they do not include the other genres because it is looking for the exact string 
