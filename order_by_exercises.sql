@@ -22,10 +22,13 @@ WHERE last_name LIKE 'E%E'
 ORDER BY emp_no; 
 
 #6 ANSWER: 899, Sergi Erde, Teiji Eldridge
-SELECT *#COUNT(last_name)
-FROM employees
-WHERE last_name LIKE 'E%E'
-ORDER BY hire_date; 
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    last_name LIKE 'E%E'
+ORDER BY hire_date DESC; 
 
 #7 ANSWER: 362, Tremaine Eugenio, Gudjon Vakili
 SELECT *#COUNT(hire_date)
@@ -34,4 +37,4 @@ WHERE hire_date
 LIKE '199%' 
 AND birth_date 
 LIKE '____-12-25'
-ORDER BY birth_date, hire_date;
+ORDER BY birth_date, hire_date DESC;
