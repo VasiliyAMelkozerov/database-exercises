@@ -60,4 +60,3 @@ SELECT
     birth_date
 FROM
     employees;
-SELECT REPLACE('abcdefg', 'd', '123');
