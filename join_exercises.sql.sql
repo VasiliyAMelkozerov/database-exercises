@@ -72,6 +72,7 @@ SELECT
 --     dept_manager.dept_no,
 --     dept_manager.emp_no,
 --     employees.emp_no,
+#commented out to show that I dont not have to start it at the select statement to be able to each other
     CONCAT(employees.first_name,
             ' ',
             employees.last_name) AS 'Deparment Manager'
