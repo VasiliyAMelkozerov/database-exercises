@@ -50,3 +50,38 @@ FROM
 
 DESCRIBE departments;
 select dept_name from departments;
+
+SELECT 
+    dept_name,
+    salaries.emp_no,
+    dept_name,
+    salaries.salary,
+    CASE
+        WHEN dept_name IN ('Research' , 'Development') THEN 'R&D'
+        WHEN dept_name IN ('Sales' , 'Marketing') THEN 'Sales & Marketing'
+        WHEN dept_name IN ('Production' , 'Quality Management') THEN 'Production & Quality Management'
+        WHEN dept_name IN ('Finance' , 'Human resources') THEN 'Finance & Human Resources'
+        WHEN dept_name IN ('Customer Servive') THEN 'Customer Service'
+    END AS 'Department Groups'
+FROM
+    departments
+        JOIN
+    dept_emp USING (dept_no)
+        JOIN
+    salaries ON dept_emp.emp_no = salaries.emp_no
+        AND salaries.to_date > NOW()
+ORDER BY emp_no;
+
+describe dept_emp;
+use employees;
+#SELECT student_name, COUNT(*) FROM students GROUP BY class_type
+#Error Code: 1055. Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'employees.employees.first_name' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+
+select first_name, count(*) from employees group by gender;
+select * from salaries where emp_no + 2 > 10000 AND salary < 80000;
+select distinct emp_no;
+
+
+
+
+
